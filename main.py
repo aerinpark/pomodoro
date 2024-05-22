@@ -11,9 +11,9 @@ FONT = "Elephant"
 CHECK = "✔ "
 
 # in minutes
-WORK_TIME = 5
+WORK_TIME = 25
 SHORT_BREAK = 5
-LONG_BREAK = 5
+LONG_BREAK = 15
 
 start = False
 timer = None
