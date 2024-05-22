@@ -34,7 +34,6 @@ def reset_timer():
 def start_timer():
     global start, reps
     reps += 1
-    print(reps)
     if not start:
         start = True
         # routine: work -> sb -> work -> sb -> work -> sb -> work -> lb and repeat
@@ -43,7 +42,7 @@ def start_timer():
             title.config(bg=RED, text="Focus")
             timer_label.config(bg=RED)
             check.config(text=CHECK * math.floor(reps / 2), bg=RED)
-            countdown(WORK_TIME)
+            countdown(WORK_TIME * 60)
 
         elif reps % 8 == 0:
             window.config(bg=GREEN)
@@ -51,13 +50,13 @@ def start_timer():
             timer_label.config(bg=GREEN)
             check.config(text=CHECK * math.floor(reps / 2), bg=GREEN)
             reps = 0
-            countdown(LONG_BREAK)
+            countdown(LONG_BREAK * 60)
         else:
             window.config(bg=BLUE)
             title.config(bg=BLUE, text="Break")
             timer_label.config(bg=BLUE)
             check.config(text=CHECK * math.floor(reps / 2), bg=BLUE)
-            countdown(SHORT_BREAK)
+            countdown(SHORT_BREAK * 60)
 
 
 def countdown(time_in_sec):
